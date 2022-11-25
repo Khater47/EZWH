@@ -1,0 +1,4 @@
+./client/node_modules
+./server/node_modules
+EZWarhouseDB_test.db
+node_modules

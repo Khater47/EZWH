@@ -1,0 +1,99 @@
+Server listening at http://localhost:3001
+
+
+  Test InternalOrder APIs
+[0mPOST /api/internalOrders [32m201 [0m39.689 ms - -[0m
+    ✔ Adding a new internal order (55ms)
+[0mGET /api/internalOrders [32m200 [0m6.229 ms - 146[0m
+    ✔ Getting all internal orders
+[0mGET /api/internalOrdersIssued [32m200 [0m2.637 ms - 146[0m
+    ✔ Getting all internal orders issued
+[0mPUT /api/internalOrders/1 [32m200 [0m12.191 ms - -[0m
+[0mGET /api/internalOrders/1 [32m200 [0m2.099 ms - 146[0m
+    ✔ Changing internal order state
+[0mPUT /api/internalOrders/1 [32m200 [0m16.189 ms - -[0m
+[0mGET /api/internalOrders/1 [32m200 [0m2.293 ms - 141[0m
+    ✔ Changing internal order state
+[0mDELETE /api/internalOrders/1 [32m204 [0m5.980 ms - -[0m
+[0mGET /api/internalOrders/1 [33m404 [0m1.626 ms - -[0m
+    ✔ Deleting an internal order
+
+  Testing UC9
+[0mPOST /api/internalOrders [32m201 [0m24.081 ms - -[0m
+    ✔ Adding a new internal order
+[0mPUT /api/internalOrders/1 [32m200 [0m5.835 ms - -[0m
+[0mGET /api/internalOrders/1 [32m200 [0m2.527 ms - 146[0m
+    ✔ Changing internal order state
+
+  Testing UC10
+[0mPUT /api/internalOrders/1 [32m200 [0m24.063 ms - -[0m
+[0mGET /api/internalOrders/1 [32m200 [0m4.719 ms - 141[0m
+    ✔ Changing internal order state
+[0mGET /api/skuitems/12345678901234567890123456789015 [32m200 [0m1.732 ms - 100[0m
+    ✔ Getting sku availability
+
+  Test item APIs
+[0mPOST /api/item [33m422 [0m0.517 ms - -[0m
+AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 201 but got 422
+    at C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\test\itemRoute.js:63:21
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  showDiff: true,
+  actual: 422,
+  expected: 201
+}
+    1) add item : POST /api/item
+[0mGET /api/items [32m200 [0m1.895 ms - 2[0m
+AssertionError: expected [] to deeply equal [ { id: 1, …(4) }, { id: 2, …(4) } ]
+    at Proxy.equalInAnyOrder (C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\node_modules\deep-equal-in-any-order\build\index.js:36:47)
+    at Proxy.methodWrapper (C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\node_modules\chai\lib\chai\utils\addMethod.js:57:25)
+    at C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\test\itemRoute.js:76:30
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  showDiff: true,
+  actual: [],
+  expected: [
+    {
+      id: 1,
+      description: 'a new item',
+      price: 10.99,
+      SKUId: 1,
+      supplierId: 2
+    },
+    {
+      id: 2,
+      description: 'another item',
+      price: 12.99,
+      SKUId: 2,
+      supplierId: 1
+    }
+  ],
+  operator: 'deepStrictEqual'
+}
+    2) get items : GET /api/items
+[0mGET /api/items/1 [33m404 [0m1.704 ms - -[0m
+AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404
+    at C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\test\itemRoute.js:88:21
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  showDiff: true,
+  actual: 404,
+  expected: 200
+}
+    3) getItembyId : GET /api/items/:id
+[0mGET /api/items/4 [33m404 [0m2.910 ms - -[0m
+    ✔ getItembyId : GET /api/items/:id
+[0mPUT /api/item/1 [33m404 [0m1.897 ms - -[0m
+AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404
+    at C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\test\itemRoute.js:105:21
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  showDiff: true,
+  actual: 404,
+  expected: 200
+}
+    4) editItem : PUT /api/item/:id
+[0mDELETE /api/item/1 [33m404 [0m189.191 ms - 21630[0m
+AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 204 but got 404
+    at C:\Users\Utente\Desktop\Poli\Magistrale\Software Engineering\EZWH\EzWh\code\server\test\itemRoute.js:117:21
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  showDiff: true,
+  actual: 404,
+  expected: 204
+}

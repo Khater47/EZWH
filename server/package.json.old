@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "originaltest": "node_modules/.bin/jest",
+    "test": "jest",
+    "originalapiTest": "node_modules/.bin/mocha",
+    "apiTest": "mocha"
+  },
+  "dependencies": {
+    "arkit": "^1.6.4",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "~1.4.4",
+    "dayjs": "^1.11.1",
+    "debug": "~2.6.9",
+    "deep-equal-in-any-order": "^1.1.18",
+    "express": "~4.16.1",
+    "express-validator": "^6.14.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jest": "^28.1.0",
+    "mocha": "^10.0.0",
+    "morgan": "~1.9.1",
+    "sqlite3": "^5.0.8",
+    "test": "^0.6.0"
+  }
+}
